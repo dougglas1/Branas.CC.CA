@@ -19,7 +19,7 @@ namespace Branas.CC.CA.Application.Tests.CalculoTaxi
         [Fact]
         public void Deve_Calcular_Valor_Corrida_Taxi_Dias_Normais()
         {
-            var actual = new CalculoCorridaTaxiDepois().CalcularCorridaTaxi(DISTANCIA, DATA_NORMAL);
+            var actual = new CalculoCorridaTaxi().CalcularCorridaTaxi(DISTANCIA, DATA_NORMAL);
 
             actual.Should().Be(2100);
         }
@@ -27,7 +27,7 @@ namespace Branas.CC.CA.Application.Tests.CalculoTaxi
         [Fact]
         public void Deve_Calcular_Valor_Corrida_Taxi_Nos_Domingos()
         {
-            var actual = new CalculoCorridaTaxiDepois().CalcularCorridaTaxi(DISTANCIA, DATA_DOMINGO);
+            var actual = new CalculoCorridaTaxi().CalcularCorridaTaxi(DISTANCIA, DATA_DOMINGO);
 
             actual.Should().Be(2900);
         }
@@ -35,7 +35,7 @@ namespace Branas.CC.CA.Application.Tests.CalculoTaxi
         [Fact]
         public void Deve_Calcular_Valor_Corrida_Taxi_De_Noite()
         {
-            var actual = new CalculoCorridaTaxiDepois().CalcularCorridaTaxi(DISTANCIA, DATA_NOITE);
+            var actual = new CalculoCorridaTaxi().CalcularCorridaTaxi(DISTANCIA, DATA_NOITE);
 
             actual.Should().Be(3900);
         }
@@ -43,7 +43,7 @@ namespace Branas.CC.CA.Application.Tests.CalculoTaxi
         [Fact]
         public void Deve_Calcular_Valor_Corrida_Taxi_Com_Distancia_Negativa()
         {
-            Action action = () => new CalculoCorridaTaxiDepois().CalcularCorridaTaxi(DISTANCIA_NEGATIVA, DATA_NORMAL);
+            Action action = () => new CalculoCorridaTaxi().CalcularCorridaTaxi(DISTANCIA_NEGATIVA, DATA_NORMAL);
 
             action.Should().Throw<Exception>().WithMessage(MENSAGEM_ERRO_DISTANCIA_NEGATIVA);
         }

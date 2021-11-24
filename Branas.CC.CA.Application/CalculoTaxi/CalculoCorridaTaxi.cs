@@ -2,7 +2,7 @@
 
 namespace Branas.CC.CA.Application.CalculoTaxi
 {
-    public class CalculoCorridaTaxiDepois
+    public class CalculoCorridaTaxi
     {
         private const decimal VALOR_NOITE = 3.90M;
         private const decimal VALOR_DOMINGO = 2.90M;
