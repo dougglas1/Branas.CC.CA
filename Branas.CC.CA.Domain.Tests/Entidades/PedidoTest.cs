@@ -45,7 +45,7 @@ namespace Branas.CC.CA.Domain.Tests.Entidades
                 .AdicionarItens(BuscarItens())
                 .AdicionarCupom(cupom);
             
-            var subtotal = pedido.Itens.Sum(item => item.Preco);
+            var subtotal = pedido.Itens.Sum(item => item.Preco * item.Quantidade);
             var total = subtotal - (subtotal * (cupom.Porcentagem / 100));
             
             pedido.ValorSubTotal.Should().Be(subtotal);

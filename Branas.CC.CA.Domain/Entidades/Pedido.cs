@@ -56,7 +56,7 @@ namespace Branas.CC.CA.Domain.Entidades
         
         private void CalcularValorSubTotal()
         {
-            ValorSubTotal = _itens.Sum(item => item.Preco);
+            ValorSubTotal = _itens.Sum(item => item.Preco * item.Quantidade);
         }
         
         private void CalcularValorTotal()
