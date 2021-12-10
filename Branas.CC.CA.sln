@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Branas.CC.CA.Application", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Branas.CC.CA.Application.Tests", "Branas.CC.CA.Application.Tests\Branas.CC.CA.Application.Tests.csproj", "{704896D0-75F7-4A1B-B812-5BB8321B8B5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Branas.CC.CA.Domain", "Branas.CC.CA.Domain\Branas.CC.CA.Domain.csproj", "{58A6BB42-9C5F-47F9-B3AA-FEEAA7AB226E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Branas.CC.CA.Domain", "Branas.CC.CA.Domain\Branas.CC.CA.Domain.csproj", "{58A6BB42-9C5F-47F9-B3AA-FEEAA7AB226E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Branas.CC.CA.Domain.Tests", "Branas.CC.CA.Domain.Tests\Branas.CC.CA.Domain.Tests.csproj", "{E99D7DC7-7651-47C9-A9B2-6FC69ABDB4B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Branas.CC.CA.Domain.Tests", "Branas.CC.CA.Domain.Tests\Branas.CC.CA.Domain.Tests.csproj", "{E99D7DC7-7651-47C9-A9B2-6FC69ABDB4B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Branas.CC.CA.Document", "Branas.CC.CA.Document\Branas.CC.CA.Document.csproj", "{B0F38F14-2171-4EF6-BD5E-66D79EE06DEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{E99D7DC7-7651-47C9-A9B2-6FC69ABDB4B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E99D7DC7-7651-47C9-A9B2-6FC69ABDB4B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E99D7DC7-7651-47C9-A9B2-6FC69ABDB4B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0F38F14-2171-4EF6-BD5E-66D79EE06DEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0F38F14-2171-4EF6-BD5E-66D79EE06DEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0F38F14-2171-4EF6-BD5E-66D79EE06DEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0F38F14-2171-4EF6-BD5E-66D79EE06DEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

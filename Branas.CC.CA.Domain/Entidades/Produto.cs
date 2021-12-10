@@ -1,19 +1,23 @@
-﻿
+﻿using System;
+
 namespace Branas.CC.CA.Domain.Entidades
 {
-    public class Item
+    /// <summary>
+    /// Item
+    /// </summary>
+    public class Produto
     {
+        public Guid Id { get; private set; }
         public string Descricao { get; private set; }
         public decimal PrecoSemImposto { get; private set; }
         public decimal Preco { get; private set; }
-        public int Quantidade { get; private set; }
         public Imposto Imposto { get; private set; }
 
-        public Item(string descricao, decimal precoSemImposto, int quantidade, Imposto imposto)
+        public Produto(Guid id, string descricao, decimal precoSemImposto, Imposto imposto)
         {
+            Id = id;
             Descricao = descricao;
             PrecoSemImposto = precoSemImposto;
-            Quantidade = quantidade;
             Imposto = imposto;
             CalcularPreco();
         }

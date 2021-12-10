@@ -4,21 +4,24 @@ using System.Linq;
 
 namespace Branas.CC.CA.Domain.Entidades
 {
+    /// <summary>
+    /// Order
+    /// </summary>
     public class Pedido
     {
         public decimal ValorSubTotal { get; private set; }
         public decimal ValorTotal { get; private set; }
-        public IEnumerable<Item> Itens => _itens;
+        public IEnumerable<PedidoItem> Itens => _itens;
         public Cpf Cpf { get; private set; }
         public Cupom Cupom { get; private set; }
         public Frete Frete { get; private set; }
         public Status Status { get; private set; }
 
-        private List<Item> _itens;
+        private List<PedidoItem> _itens;
 
         public Pedido(Cpf cpf)
         {
-            _itens = new List<Item>();
+            _itens = new List<PedidoItem>();
             Cpf = cpf;
             AdicionarStatus();
         }
@@ -30,9 +33,10 @@ namespace Branas.CC.CA.Domain.Entidades
             return this;
         }
         
-        public Pedido AdicionarItens(IEnumerable<Item> itens)
+        public Pedido AdicionarItem(PedidoItem item)
         {
-            _itens.AddRange(itens);
+            _itens.Add(item);
+
             CalcularValorSubTotal();
 
             return this;
@@ -57,6 +61,7 @@ namespace Branas.CC.CA.Domain.Entidades
         private void CalcularValorSubTotal()
         {
             ValorSubTotal = _itens.Sum(item => item.Preco * item.Quantidade);
+            CalcularValorTotal();
         }
         
         private void CalcularValorTotal()
