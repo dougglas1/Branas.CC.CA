@@ -17,5 +17,7 @@ namespace Branas.CC.CA.Domain.Entidades
             Preco = preco;
             Quantidade = quantidade;
         }
+
+        public decimal CalcularTotal() => Preco * Quantidade;
     }
 }

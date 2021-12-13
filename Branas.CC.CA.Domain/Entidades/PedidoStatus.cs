@@ -1,7 +1,7 @@
 ﻿
 namespace Branas.CC.CA.Domain.Entidades
 {
-    public enum Status
+    public enum PedidoStatus
     {
         Realizado,
         Cancelado

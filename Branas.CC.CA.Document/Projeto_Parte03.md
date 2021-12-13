@@ -5,8 +5,11 @@ Vamos implementar um sistema de vendas online com a possibilidade de realizar pe
 ### **Testes**
 
 1- Deve gerar o código do pedido
+
 2- Deve fazer um pedido (caso de uso)
+
 3- Deve simular o frete (caso de uso)
+
 4- Deve validar o cupom de desconto (caso de uso)
 
 ### **Considere**

@@ -15,7 +15,7 @@ namespace Branas.CC.CA.Domain.Entidades
         public Cpf Cpf { get; private set; }
         public Cupom Cupom { get; private set; }
         public Frete Frete { get; private set; }
-        public Status Status { get; private set; }
+        public PedidoStatus Status { get; private set; }
 
         private List<PedidoItem> _itens;
 
@@ -28,7 +28,7 @@ namespace Branas.CC.CA.Domain.Entidades
 
         public Pedido AdicionarStatus()
         {
-            Status = Cpf.Numero.ValidarCpf() ? Status.Realizado : Status.Cancelado;
+            Status = Cpf.Numero.ValidarCpf() ? PedidoStatus.Realizado : PedidoStatus.Cancelado;
 
             return this;
         }
@@ -36,14 +36,13 @@ namespace Branas.CC.CA.Domain.Entidades
         public Pedido AdicionarItem(PedidoItem item)
         {
             _itens.Add(item);
-
             CalcularValorSubTotal();
 
             return this;
         }
 
         public Pedido AdicionarCupom(Cupom cupom)
-        {
+        {            
             Cupom = cupom;
             CalcularValorTotal();
 
@@ -60,13 +59,13 @@ namespace Branas.CC.CA.Domain.Entidades
         
         private void CalcularValorSubTotal()
         {
-            ValorSubTotal = _itens.Sum(item => item.Preco * item.Quantidade);
+            ValorSubTotal = _itens.Sum(item => item.CalcularTotal());
             CalcularValorTotal();
         }
         
         private void CalcularValorTotal()
         {
-            var descontoCupom = Cupom != null ? (ValorSubTotal * (Cupom.Porcentagem / 100)) : 0;
+            var descontoCupom = Cupom != null ? Cupom.CalcularDesconto(ValorSubTotal) : 0;
             var descontoFrete = Frete != null ? Frete.Valor : 0;
             
             ValorTotal = ValorSubTotal - descontoCupom - descontoFrete;

@@ -5,7 +5,9 @@ Vamos implementar um sistema de vendas online com a possibilidade de realizar pe
 ### **Testes**
 
 1- Não deve aplicar cupom de desconto expirado
+
 2- Deve calcular o valor do frete com base nas dimensões (altura, largura e profundidade em cm) e o peso dos produtos (em kg)
+
 3- Deve retornar o preço mínimo de frete caso ele seja superior ao valor calculado
 
 ### **Considere**
