@@ -49,14 +49,6 @@ namespace Branas.CC.CA.Domain.Entidades
             return this;
         }
         
-        public Pedido AdicionarFrete(Frete frete)
-        {
-            Frete = frete;
-            CalcularValorTotal();
-
-            return this;
-        }
-        
         private void CalcularValorSubTotal()
         {
             ValorSubTotal = _itens.Sum(item => item.CalcularTotal());
@@ -66,9 +58,9 @@ namespace Branas.CC.CA.Domain.Entidades
         private void CalcularValorTotal()
         {
             var descontoCupom = Cupom != null ? Cupom.CalcularDesconto(ValorSubTotal) : 0;
-            var descontoFrete = Frete != null ? Frete.Valor : 0;
+            Frete = new Frete(_itens.Sum(item => item.CalcularFrete()));
             
-            ValorTotal = ValorSubTotal - descontoCupom - descontoFrete;
+            ValorTotal = ValorSubTotal - descontoCupom + Frete.Valor;
         }
     }
 }

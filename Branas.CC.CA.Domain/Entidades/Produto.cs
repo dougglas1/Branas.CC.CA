@@ -31,9 +31,9 @@ namespace Branas.CC.CA.Domain.Entidades
             CalcularPreco();
         }
         
-        public decimal CalcularDensidade() => Peso / CalcularDimensao();
+        public decimal CalcularVolume() => Dimensao.CalcularDimensao();
 
-        private decimal CalcularDimensao() => (Dimensao.Largura / 100) * (Dimensao.Altura / 100) * (Dimensao.Comprimento / 100);
+        public decimal CalcularDensidade() => Peso / Dimensao.CalcularDimensao();
         
         private void CalcularPreco() => Preco = PrecoSemImposto + Imposto.Valor;
     }

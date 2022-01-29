@@ -16,7 +16,11 @@ namespace Branas.CC.CA.Domain.Tests.Fakes
         public const decimal MONITOR_PRECO = 1199.99M;
         public const decimal HEADSET_PRECO = 211.99M;
         public const decimal VENTOINHA_FAN_PRECO = 27.06M;
-        
+
+        public const decimal MONITOR_PESO = 10;
+        public const decimal HEADSET_PESO = 3;
+        public const decimal VENTOINHA_FAN_PESO = 1;
+
         public static Produto BuscarProduto(
             Guid id, Guid categoriaId, string descricao, decimal preco, 
             Imposto imposto, Dimensao dimensao, decimal peso, UnidadeMedida unidadeMedida) => 

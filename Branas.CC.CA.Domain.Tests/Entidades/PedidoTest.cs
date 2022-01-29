@@ -38,7 +38,7 @@ namespace Branas.CC.CA.Domain.Tests.Entidades
 
             pedido.Cupom.Status.Should().Be(CupomStatus.Valido);
             pedido.ValorSubTotal.Should().Be(1520.22M);
-            pedido.ValorTotal.Should().Be(1368.198M);
+            pedido.ValorTotal.Should().Be(1538.198M);
         }
         
         [Fact]
@@ -51,7 +51,7 @@ namespace Branas.CC.CA.Domain.Tests.Entidades
             
             pedido.Cupom.Status.Should().Be(CupomStatus.Invalido);
             pedido.ValorSubTotal.Should().Be(1520.22M);
-            pedido.ValorTotal.Should().Be(1520.22M);
+            pedido.ValorTotal.Should().Be(1690.22M);
         }
     }
 }

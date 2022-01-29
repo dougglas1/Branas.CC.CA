@@ -2,6 +2,11 @@
 {
     public class UnidadeMedida
     {
-        public string Codigo { get; private set; }
+        public string Sigla { get; private set; }
+
+        public UnidadeMedida(string sigla)
+        {
+            Sigla = sigla;
+        }
     }
 }
